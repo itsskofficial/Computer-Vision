@@ -5,4 +5,4 @@ from dotenv import *
 argparse =
 load_dotenv('../keys.env')
 
-BOT_INFO = 
+BOT_INFO = """
