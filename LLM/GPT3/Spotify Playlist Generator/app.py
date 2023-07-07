@@ -18,7 +18,7 @@ sp = spotipy.Spotify(
     )
 )
 
-current_user = sp.current_user
+spotify_user = sp.current_user
 assert current_user is not None
 
 search_results = sp.search(
@@ -30,7 +30,8 @@ search_results = sp.search(
 track_id = ['tracks']['items'][0]['id']
 
 sp.user_playlist_create(
-    current_user
+    current_user,
+
 )
 
 BOT_INFO = """
