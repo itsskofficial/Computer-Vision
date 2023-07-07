@@ -30,25 +30,25 @@ def get_json_array_from_list(text):
         )
     return json_array
 
-def get_songs_from_prompt(prompt):
-    
-messages = [
-    {
-        'role' : 'system',
-        'content' : BOT_INFO
-    },
-    {
-        'role' : 'user',
-        'content' : 'Generate a playlist of 10 top egoistic songs'
-    }
-]
+def get_songs_from_prompt(prompt, count = 10):
 
-response = openai.ChatCompletion.create(
-    model = 'gpt-3.5-turbo',
-    messages = messages
-)
+    messages = [
+        {
+            'role' : 'system',
+            'content' : BOT_INFO
+        },
+        {
+            'role' : 'user',
+            'content' : 'Generate a playlist of 10 top egoistic songs'
+        }
+    ]
 
-answer = response.to_dict()['choices'][0]['message'].to_dict()['content']
-print(answer)
-json_array = get_json_array_from_list(answer)
-print(json_array)
+    response = openai.ChatCompletion.create(
+        model = 'gpt-3.5-turbo',
+        messages = messages
+    )
+
+    answer = response.to_dict()['choices'][0]['message'].to_dict()['content']
+    print(answer)
+    json_array = get_json_array_from_list(answer)
+    print(json_array)
