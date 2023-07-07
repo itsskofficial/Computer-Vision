@@ -13,5 +13,8 @@ messages = [
     {
         'role' : 'system',
         'content' : BOT_INFO
+    },
+    {
+        'role ' 
     }
 ]
