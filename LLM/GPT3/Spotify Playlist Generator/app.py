@@ -22,7 +22,7 @@ def get_json_from_list(text):
         artist = item.split('by')[1].strip()
         dictionary.append(
             {
-                'song' : s
+                'song' : song
             }
         )
         
