@@ -5,7 +5,7 @@ from dotenv import *
 
 parser = argparse.ArgumentParser(description = 'An AI assistant which generates a Spotify playlist from user input text')
 parser.add_argument('--envfile', help = 'A file which contains your OPENAI_API_KEY', required = False, default = '../keys.env', type = str)
-
+args = parser.
 load_dotenv())
 
 BOT_INFO = """
