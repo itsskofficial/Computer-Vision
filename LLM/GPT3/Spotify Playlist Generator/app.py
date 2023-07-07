@@ -48,3 +48,6 @@ def main():
     create_spotify_playlist(sp, spotify_user, spotify_playlist, songs)
     
     print(f"Your playlist is created\nCheck it out at https://open.spotify.com/playlist/{spotify_playlist['id']}")
+
+if __name__ == '__main__':
+    main()
