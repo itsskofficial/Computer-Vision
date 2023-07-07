@@ -80,6 +80,7 @@ def main():
 
     spotify_user = sp.current_user
     assert spotify_user is not None
+    spotify_tracks = []
 
     songs = get_songs_from_prompt()
     for song in songs:
