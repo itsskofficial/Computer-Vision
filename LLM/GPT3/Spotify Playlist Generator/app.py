@@ -11,7 +11,7 @@ def main():
     args = parser.parse_args()
     load_dotenv(args.envfile)
     openai.api_key = os.getenv('OPENAI_API_KEY')
-    
+
     sp = spotipy.Spotify(
         auth_manager = spotipy.SpotifyOAuth(
             client_id = os.getenv('SPOTIFY_CLIENT_ID'),
@@ -28,11 +28,11 @@ def main():
     print('Hi there, I will generate a Spotify playlist for you based on any mood\n')
     prompt = input('Enter the description of the playlist mood you wanna create : ')
     count = int(input('Enter the number of songs you wanna add in your playlist : '))
-    print('Great! Here are the songs that I found for you\n')
+    print('\nGreat! Here are the songs that I found for you\n')
 
     songs = get_songs_from_prompt(prompt, count)
 
-    print('Creating a Spotify playlist for you...\n')
+    print('\nCreating a Spotify playlist for you...\n')
 
     spotify_playlist = sp.user_playlist_create(
         spotify_user,
@@ -41,7 +41,7 @@ def main():
     )
     create_spotify_playlist(sp, spotify_user, spotify_playlist, songs)
     
-    print(f"Your playlist is created\nCheck it out at https://open.spotify.com/playlist/{spotify_playlist['id']}")
+    print(f"\nYour playlist is created\nCheck it out at https://open.spotify.com/playlist/{spotify_playlist['id']}")
 
 if __name__ == '__main__':
     main()
