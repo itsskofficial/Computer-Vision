@@ -71,20 +71,20 @@ def get_songs_from_prompt(prompt, count = 10):
 
 def main():
     parser = argparse.ArgumentParser(description = 'An AI assistant which generates a Spotify playlist from user input text')
-parser.add_argument('--envfile', help = 'A file which contains your OPENAI_API_KEY', default = '../keys.env', type = str)
-args = parser.parse_args()
-load_dotenv('../keys.env')
-openai.api_key = os.getenv('OPENAI_API_KEY')
+    parser.add_argument('--envfile', help = 'A file which contains your OPENAI_API_KEY', default = '../keys.env', type = str)
+    args = parser.parse_args()
+    load_dotenv('../keys.env')
+    openai.api_key = os.getenv('OPENAI_API_KEY')
 
-sp = spotipy.Spotify(
-    auth_manager = spotipy.SpotifyOAuth(
-        client_id = os.getenv('SPOTIFY_CLIENT_ID'),
-        client_secret = os.getenv('SPOTIFY_CLIENT_SECRET'),
-        redirect_uri = 'http:/localhost:9999',
-        scope = 'playlist-modiy-private'
+    sp = spotipy.Spotify(
+        auth_manager = spotipy.SpotifyOAuth(
+            client_id = os.getenv('SPOTIFY_CLIENT_ID'),
+            client_secret = os.getenv('SPOTIFY_CLIENT_SECRET'),
+            redirect_uri = 'http:/localhost:9999',
+            scope = 'playlist-modiy-private'
 
+        )
     )
-)
 
-spotify_user = sp.current_user
-assert spotify_user is not None
+    spotify_user = sp.current_user
+    assert spotify_user is not None
