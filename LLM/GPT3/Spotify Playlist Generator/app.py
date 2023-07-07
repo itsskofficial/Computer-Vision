@@ -29,7 +29,7 @@ spotify_search_results = sp.search(
     limit = 3
 )
 
-track_id = ['tracks']['items'][0]['id']
+track_id = spotify_search_results['tracks']['items'][0]['id']
 
 sp.user_playlist_create(
     spotify_user,
