@@ -105,7 +105,5 @@ def main():
     print('Creating a Spotify playlist for you...\n')
 
     create_spotify_playlist(sp, spotify_user, spotify_playlist, songs)
-
     
-    spotify_playlist[]
     print(f"Your playlist is created\nCheck it out at https://open.spotify.com/playlist/{spotify_playlist['id']}")
