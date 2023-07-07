@@ -21,7 +21,7 @@ def get_json_array_from_list(text):
     text = text.split('\n')
     print(text)
     for item in text:
-        #song = item.split('.')[1].split('by')[0].strip()
+        #song = item.split('.')[1].strip().split('by')[0].strip()
         print(item)
         song = item.split('.')
         print(song)
