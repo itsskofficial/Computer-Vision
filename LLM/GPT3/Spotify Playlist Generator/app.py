@@ -84,7 +84,6 @@ def main():
         )
     )
 
-    
     spotify_user = sp.current_user
     assert spotify_user is not None
     songs = get_songs_from_prompt()
