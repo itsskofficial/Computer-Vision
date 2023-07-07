@@ -35,7 +35,7 @@ def main():
     print('\nCreating a Spotify playlist for you...\n')
 
     spotify_playlist = sp.user_playlist_create(
-        spotify_user,
+        spotify_user['id'],
         public = False,
         name = prompt
     )
