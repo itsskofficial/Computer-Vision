@@ -8,11 +8,7 @@ from dotenv import *
 
 
 
-sp.user_playlist_add_tracks(
-    spotify_user['id'],
-    spotify_playlist['id'],
-    spotify_track
-)
+
 
 BOT_INFO = """
 You are a helpful playlist generating assistant. You should generate a list of songs and their artist according to a text prompt.
