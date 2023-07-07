@@ -14,7 +14,9 @@ sp = spotipy.Spotify(
     auth_manager = spotipy.SpotifyOAuth(
         client_id = os.getenv('SPOTIFY_CLIENT_ID'),
         client_secret = os.getenv('SPOTIFY_CLIENT_SECRET'),
-        redirect_uri = 'http:/localhost:9999'
+        redirect_uri = 'http:/localhost:9999',
+        
+
     )
 )
 
@@ -32,7 +34,7 @@ track_id = ['tracks']['items'][0]['id']
 sp.user_playlist_create(
     spotify_user,
     public = False,
-    name = f{}
+    name = 
 )
 
 BOT_INFO = """
