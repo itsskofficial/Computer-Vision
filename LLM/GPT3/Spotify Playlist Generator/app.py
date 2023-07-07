@@ -48,7 +48,7 @@ def get_songs_from_prompt(prompt = 'happy songs', count = 10):
     return json_array
 
 def create_spotify_playlist():
-    
+
 
 def main():
     parser = argparse.ArgumentParser(description = 'An AI assistant which generates a Spotify playlist from user input text')
@@ -85,22 +85,6 @@ def main():
 
     print('Creating a Spotify playlist for you...\n')
 
-    for song in songs:
-        song_name = song['song']
-        artist_name = song['artist']
-        spotify_search_results = sp.search(
-            q = f'{song_name} {artist_name}',
-            type = 'track',
-            limit = 3
-        )
-
-        spotify_track = spotify_search_results['tracks']['items'][0]['id']
-        spotify_tracks.append(spotify_track)
     
-    sp.user_playlist_add_tracks(
-        spotify_user['id'],
-        spotify_playlist['id'],
-        spotify_tracks
-    )
 
     print('Your playlist is created\nCheck it out at {}')
