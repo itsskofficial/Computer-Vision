@@ -20,4 +20,6 @@ messages = [
     }
 ]
 
-response = 
+response = openai.ChatCompletion.create(
+    
+)
