@@ -107,5 +107,5 @@ def main():
     create_spotify_playlist(sp, spotify_user, spotify_playlist, songs)
 
     
-    spotify_playlist.
+    spotify_playlist[]
     print('Your playlist is created\nCheck it out at {}')
