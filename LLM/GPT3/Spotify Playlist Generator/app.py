@@ -19,7 +19,6 @@ Don't include any introductory or ending lines
 def get_json_array_from_list(text):
     json_array = []
     text = text.split('\n')
-    print(text)
     for item in text:
         song = item.split('.')[1].strip().split('by')[0].strip()
         artist = item.split('.')[1].strip().split('by')[1].strip()
@@ -49,6 +48,6 @@ response = openai.ChatCompletion.create(
 
 answer = response.to_dict()['choices'][0]['message'].to_dict()['content']
 print(answer)
-#json_array = get_json_array_from_list(answer)
+json_array = get_json_array_from_list(answer)
 get_json_array_from_list(answer)
-#print(json_array)
+print(json_array)
