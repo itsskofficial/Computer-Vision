@@ -18,7 +18,7 @@ def get_json_from_list(text):
     text = text.split('\n')
     for item in text:
         song = item.split('.')[1].strip()
-        artist = item.split('by')
+        artist = item.split('by')[1].strip()
         
 messages = [
     {
