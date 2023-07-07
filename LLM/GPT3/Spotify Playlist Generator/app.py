@@ -80,7 +80,7 @@ def main():
     )
     songs = get_songs_from_prompt(prompt, count)
 
-    
+    print('Creating a Spotify playlist for you...\n')
 
     for song in songs:
         song_name = song['song']
