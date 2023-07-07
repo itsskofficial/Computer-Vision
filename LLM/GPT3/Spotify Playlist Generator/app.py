@@ -23,7 +23,7 @@ sp = spotipy.Spotify(
 spotify_user = sp.current_user
 assert spotify_user is not None
 
-search_results = sp.search(
+spotify_search_results = sp.search(
     q = item[0]['song'],
     type = 'track',
     limit = 3
