@@ -6,7 +6,7 @@ from dotenv import *
 parser = argparse.ArgumentParser(description = 'An AI assistant which generates a Spotify playlist from user input text')
 parser.add_argument('--envfile', help = 'A file which contains your OPENAI_API_KEY', required = False, default = '../keys.env', type = str)
 args = parser.parse_args()
-load_dotenv())
+load_dotenv(args.envfile)
 
 BOT_INFO = """
 You are a helpful playlist generating assistant. You should generate a list of songs and their artist according to a text prompt
