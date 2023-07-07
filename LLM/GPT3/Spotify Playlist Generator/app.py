@@ -21,6 +21,7 @@ def get_json_from_list(text):
         song = item.split('.')[1].strip()
         artist = item.split('by')[1].strip()
         
+        
 messages = [
     {
         'role' : 'system',
