@@ -52,7 +52,6 @@ def create_spotify_playlist(sp, spotify_user, spotify_playlist, songs):
         spotify_track = spotify_search_results['tracks']['items'][0]['id']
         spotify_tracks.append(spotify_track)
     
-    print(sp)
     sp.user_playlist_add_tracks(
         spotify_user['id'],
         spotify_playlist['id'],
