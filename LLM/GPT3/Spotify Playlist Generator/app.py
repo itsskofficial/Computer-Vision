@@ -21,7 +21,9 @@ sp = spotipy.Spotify(
 current_user = sp.current_user
 assert current_user is not None
 
-sp.search()
+sp.search(
+    q = 
+)
 
 BOT_INFO = """
 You are a helpful playlist generating assistant. You should generate a list of songs and their artist according to a text prompt.
