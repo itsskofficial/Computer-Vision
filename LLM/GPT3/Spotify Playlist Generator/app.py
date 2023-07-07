@@ -3,7 +3,8 @@ import openai
 import argparse
 from dotenv import *
 
-argparse = argparse.ArgumentParser(description = 'An AI assistant which generates a Spotify playlist from ')
+argparse = argparse.ArgumentParser(description = 'An AI assistant which generates a Spotify playlist from user input text')
+
 load_dotenv('../keys.env')
 
 BOT_INFO = """
