@@ -16,6 +16,6 @@ messages = [
     },
     {
         'role' : 'user',
-        'content' :  
+        'content' : Generate a playlist of  
     }
 ]
