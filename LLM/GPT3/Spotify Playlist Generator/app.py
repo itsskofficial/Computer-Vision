@@ -78,6 +78,11 @@ def main():
     assert spotify_user is not None
     spotify_tracks = []
 
+    spotify_playlist = sp.user_playlist_create(
+        spotify_user,
+        public = False,
+        name = prompt
+    )
     songs = get_songs_from_prompt()
     for song in songs:
         song_name = song['song']
