@@ -32,7 +32,7 @@ def main():
 
     songs = get_songs_from_prompt(prompt, count)
 
-    print('\nCreating a Spotify playlist for you...\n')
+    print('\nCreating a Spotify playlist for you...')
 
     spotify_playlist = sp.user_playlist_create(
         spotify_user['id'],
