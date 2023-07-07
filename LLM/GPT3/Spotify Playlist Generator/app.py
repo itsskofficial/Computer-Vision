@@ -15,7 +15,7 @@ sp = spotipy.Spotify(
         client_id = os.getenv('SPOTIFY_CLIENT_ID'),
         client_secret = os.getenv('SPOTIFY_CLIENT_SECRET'),
         redirect_uri = 'http:/localhost:9999',
-        scope = 
+        scope = 'playlist'
 
     )
 )
