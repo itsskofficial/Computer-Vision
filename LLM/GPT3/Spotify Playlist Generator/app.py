@@ -71,7 +71,7 @@ def main():
     print('Hi there, I will generate a Spotify playlist for you based on any mood\n')
     prompt = input('Enter the description of the playlist mood you wanna create : ')
     count = int(input('Enter the number of songs you wanna add in your playlist : '))
-    print('Great! Here are the songs that I found for you')
+    print('Great! Here are the songs that I found for you\n')
 
     spotify_playlist = sp.user_playlist_create(
         spotify_user,
