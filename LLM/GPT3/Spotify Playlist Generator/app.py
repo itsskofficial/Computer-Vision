@@ -1,6 +1,6 @@
 import os
-import json
 import openai
+import spotipu
 import argparse
 from dotenv import *
 
