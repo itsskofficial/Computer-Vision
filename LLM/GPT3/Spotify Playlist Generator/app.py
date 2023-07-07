@@ -16,6 +16,6 @@ messages = [
     },
     {
         'role' : 'user',
-        'content' : Generate a playlist of  
+        'content' : 'Generate a playlist of egoistic songs'
     }
 ]
