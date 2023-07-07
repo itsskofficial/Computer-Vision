@@ -93,3 +93,4 @@ def main():
         )
 
     spotify_track = spotify_search_results['tracks']['items'][0]['id']
+    spotify_tracks.append()
