@@ -19,3 +19,5 @@ messages = [
         'content' : 'Generate a playlist of 10 top egoistic songs'
     }
 ]
+
+response = 
