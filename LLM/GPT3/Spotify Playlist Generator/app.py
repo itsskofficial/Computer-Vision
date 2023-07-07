@@ -96,5 +96,5 @@ def main():
     sp.user_playlist_add_tracks(
         spotify_user['id'],
         spotify_playlist['id'],
-        spotify_track
+        spotify_tracks
     )
