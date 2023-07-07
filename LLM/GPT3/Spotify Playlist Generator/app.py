@@ -15,7 +15,7 @@ You are a helpful playlist generating assistant. You should generate a list of s
 Desired format : <serial_no>. <song_name> by <artist_name>
 """
 
-def get_json_from_list(text):
+def get_json_array_from_list(text):
     dictionary = []
     text = text.split('\n')
     for item in text:
