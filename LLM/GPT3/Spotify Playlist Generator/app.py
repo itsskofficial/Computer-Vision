@@ -49,5 +49,4 @@ response = openai.ChatCompletion.create(
 answer = response.to_dict()['choices'][0]['message'].to_dict()['content']
 print(answer)
 json_array = get_json_array_from_list(answer)
-get_json_array_from_list(answer)
 print(json_array)
