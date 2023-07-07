@@ -34,7 +34,7 @@ track_id = ['tracks']['items'][0]['id']
 sp.user_playlist_create(
     spotify_user,
     public = False,
-    name = 
+    name = prompt
 )
 
 BOT_INFO = """
