@@ -47,7 +47,8 @@ def get_songs_from_prompt(prompt = 'happy songs', count = 10):
     json_array = get_json_array_from_list(answer)
     return json_array
 
-def create_spotify_playlist():
+def create_spotify_playlist(songs):
+    spotify_tracks = []
     for song in songs:
         song_name = song['song']
         artist_name = song['artist']
