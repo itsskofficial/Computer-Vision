@@ -11,7 +11,9 @@ load_dotenv('../keys.env')
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
 sp = spotipy.Spotify(
-    auth_manager 
+    auth_manager = spotipy.SpotifyOAuth(
+        client_id = 
+    )
 )
 BOT_INFO = """
 You are a helpful playlist generating assistant. You should generate a list of songs and their artist according to a text prompt.
