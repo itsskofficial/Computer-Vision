@@ -49,7 +49,7 @@ def get_songs_from_prompt(prompt, count = 10):
 
 def main():
     parser = argparse.ArgumentParser(description = 'An AI assistant which generates a Spotify playlist from user input text')
-    parser.add_argument('--envfile', help = 'A file which contains your OPENAI_API_KEY', default = '../keys.env', type = str)
+    parser.add_argument('--envfile', help = 'A file which contains your OPENAI_API_KEY', default = '../keys.env', type = str, required = False)
     args = parser.parse_args()
     load_dotenv(args.envfile)
     openai.api_key = os.getenv('OPENAI_API_KEY')
@@ -78,7 +78,7 @@ def main():
         name = prompt
     )
     songs = get_songs_from_prompt(prompt, count)
-    
+
     for song in songs:
         song_name = song['song']
         artist_name = song['artist']
