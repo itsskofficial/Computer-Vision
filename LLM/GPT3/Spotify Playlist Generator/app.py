@@ -16,12 +16,12 @@ Desired format : <serial_no>. <song_name> by <artist_name>
 """
 
 def get_json_array_from_list(text):
-    dictionary = []
+    json_array = []
     text = text.split('\n')
     for item in text:
         song = item.split('.')[1].strip()
         artist = item.split('by')[1].strip()
-        dictionary.append(
+        json_array.append(
             {
                 'song' : song,
                 'artist' : artist
