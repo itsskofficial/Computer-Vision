@@ -6,11 +6,7 @@ from dotenv import *
 
 
 
-spotify_playlist = sp.user_playlist_create(
-    spotify_user,
-    public = False,
-    name = prompt
-)
+
 
 sp.user_playlist_add_tracks(
     spotify_user['id'],
