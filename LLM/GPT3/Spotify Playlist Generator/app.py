@@ -24,7 +24,7 @@ def main():
 
     spotify_user = sp.current_user
     print(spotify_user)
-    sp.search()
+    
     assert spotify_user is not None
     
     print('Hi there, I will generate a Spotify playlist for you based on any mood\n')
