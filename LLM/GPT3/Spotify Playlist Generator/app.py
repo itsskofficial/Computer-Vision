@@ -38,7 +38,8 @@ sp.user_playlist_create(
 )
 
 sp.user_playlist_add_tracks(
-    current_user['id']
+    spotify_user['id'],
+    
 )
 
 BOT_INFO = """
