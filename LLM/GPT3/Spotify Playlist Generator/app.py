@@ -22,8 +22,7 @@ def main():
         )
     )
 
-    spotify_user = sp.current_user
-    print(spotify_user)
+    spotify_user = sp.current_user()
     
     assert spotify_user is not None
     
