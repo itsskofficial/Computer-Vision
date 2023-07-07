@@ -2,5 +2,5 @@ import os
 import openai
 from dotenv import *
 
-argpar
+argparse =
 load_dotenv('../keys.env')
