@@ -88,4 +88,5 @@ def main():
     assert spotify_user is not None
 
     songs = get_songs_from_prompt()
-    
+    for song in songs:
+        
