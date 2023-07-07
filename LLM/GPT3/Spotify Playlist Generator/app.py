@@ -68,6 +68,7 @@ def main():
     assert spotify_user is not None
     spotify_tracks = []
 
+    pr
     prompt = 
     spotify_playlist = sp.user_playlist_create(
         spotify_user,
