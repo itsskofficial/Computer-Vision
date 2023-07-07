@@ -100,4 +100,4 @@ def main():
         spotify_tracks
     )
 
-    print('\n You')
+    print('Your playlist is created')
