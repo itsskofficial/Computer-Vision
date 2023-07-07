@@ -12,7 +12,7 @@ def main():
     load_dotenv(args.envfile)
     openai.api_key = os.getenv('OPENAI_API_KEY')
 
-    print(os.getenv())
+    print(os.getenv('SPOTIFY_CLIENT_ID'))
     sp = spotipy.Spotify(
         auth_manager = spotipy.SpotifyOAuth(
             client_id = os.getenv('SPOTIFY_CLIENT_ID'),
