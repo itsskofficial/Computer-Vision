@@ -34,6 +34,11 @@ def main():
 
     print('Creating a Spotify playlist for you...\n')
 
+    spotify_playlist = sp.user_playlist_create(
+        spotify_user,
+        public = False,
+        name = prompt
+    )
     create_spotify_playlist(sp, spotify_user, spotify_playlist, songs)
     
     print(f"Your playlist is created\nCheck it out at https://open.spotify.com/playlist/{spotify_playlist['id']}")
