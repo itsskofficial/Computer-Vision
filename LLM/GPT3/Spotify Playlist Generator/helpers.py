@@ -1,3 +1,5 @@
+
+
 def get_json_array_from_list(text):
     json_array = []
     text = text.split('\n')
