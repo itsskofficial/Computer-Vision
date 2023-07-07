@@ -39,7 +39,7 @@ def get_songs_from_prompt(prompt, count = 10):
         },
         {
             'role' : 'user',
-            'content' : f'Generate a playlist of {count} {top egoistic songs}'
+            'content' : f'Generate a playlist of {count} {prompt}'
         }
     ]
 
