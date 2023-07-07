@@ -31,7 +31,7 @@ spotify_search_results = sp.search(
 
 track_id = spotify_search_results['tracks']['items'][0]['id']
 
-sp.user_playlist_create(
+spotify_playlistsp.user_playlist_create(
     spotify_user,
     public = False,
     name = prompt
