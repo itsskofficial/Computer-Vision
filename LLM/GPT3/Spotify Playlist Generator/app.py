@@ -26,3 +26,4 @@ response = openai.ChatCompletion.create(
 )
 
 answer = response.to_dict()['choices'][0]['message'].to_dict()['content']
+print(answer)
