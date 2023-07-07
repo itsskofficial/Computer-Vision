@@ -1,8 +1,9 @@
 import os
 import openai
+import argparse
 from dotenv import *
 
-argparse =
+argparse = argparse.
 load_dotenv('../keys.env')
 
 BOT_INFO = """
