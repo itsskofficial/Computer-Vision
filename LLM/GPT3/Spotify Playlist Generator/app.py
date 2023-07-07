@@ -86,7 +86,7 @@ def main():
         song_name = song['song']
         artist_name = song['artist']
         spotify_search_results = sp.search(
-            q = f'{song_name} {artist_name} ,
+            q = f'{song_name} {artist_name},
             type = 'track',
             limit = 3
         )
