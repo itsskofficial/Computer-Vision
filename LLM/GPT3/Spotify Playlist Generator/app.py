@@ -20,7 +20,9 @@ def get_json_array_from_list(text):
     text = text.split('\n')
     for item in text:
         song = item.split('.')[1].split('by')[0].strip()
-        song = item.split('.')[1].split('by')[0].strip()
+        song = item.split('.')
+        print(song)
+        
         artist = item.split('by')[1].strip()
         json_array.append(
             {
