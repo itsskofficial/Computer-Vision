@@ -1,4 +1,5 @@
-
+import openai
+import 
 
 def get_json_array_from_list(text):
     json_array = []
