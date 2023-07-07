@@ -19,7 +19,7 @@ sp = spotipy.Spotify(
 )
 
 spotify_user = sp.current_user
-assert current_user is not None
+assert spotify_user is not None
 
 search_results = sp.search(
     q = item[0]['song'],
@@ -30,7 +30,7 @@ search_results = sp.search(
 track_id = ['tracks']['items'][0]['id']
 
 sp.user_playlist_create(
-    current_user,
+    spotify_user,
 
 )
 
