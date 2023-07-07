@@ -15,7 +15,7 @@ You are a helpful playlist generating assistant. You should generate a list of s
 
 def get_json_from_list(list):
     list = list.split('\n')
-    
+    for item in list
 messages = [
     {
         'role' : 'system',
