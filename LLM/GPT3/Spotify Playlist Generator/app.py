@@ -13,7 +13,7 @@ openai.api_key = os.getenv('OPENAI_API_KEY')
 sp = spotipy.Spotify(
     auth_manager = spotipy.SpotifyOAuth(
         client_id = ,
-        
+        client_secret = 
     )
 )
 BOT_INFO = """
