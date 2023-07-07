@@ -84,3 +84,4 @@ def get_songs_from_prompt(prompt, count = 10):
     answer = response.to_dict()['choices'][0]['message'].to_dict()['content']
     print(answer)
     json_array = get_json_array_from_list(answer)
+    return json_array
