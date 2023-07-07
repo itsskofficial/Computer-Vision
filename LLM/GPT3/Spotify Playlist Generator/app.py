@@ -6,3 +6,4 @@ argparse =
 load_dotenv('../keys.env')
 
 BOT_INFO = """
+You are a helpful playlist generat
