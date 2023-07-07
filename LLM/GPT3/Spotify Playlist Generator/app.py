@@ -22,7 +22,8 @@ current_user = sp.current_user
 assert current_user is not None
 
 sp.search(
-    q = item[0]['song']
+    q = item[0]['song'],
+    
 )
 
 BOT_INFO = """
