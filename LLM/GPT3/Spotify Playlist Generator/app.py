@@ -11,6 +11,7 @@ You are a helpful playlist generating assistant. You should generate a list of s
 
 messages = [
     {
-        'role'
+        'role' : 'system',
+        'content' : BOT_INFO
     }
 ]
