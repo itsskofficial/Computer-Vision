@@ -13,7 +13,8 @@ BOT_INFO = """
 You are a helpful playlist generating assistant. You should generate a list of songs and their artist according to a text prompt.
 You should return a JSON array where each element follows this format : 
 {
-    'song' : <song
+    'song' : <song_title>,
+    'artist' : <artist_name>
 }
 """
 
