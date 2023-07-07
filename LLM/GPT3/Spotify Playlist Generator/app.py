@@ -27,7 +27,7 @@ def get_json_array_from_list(text):
                 'artist' : artist
             }
         )
-    return dictionary
+    return json_array
         
 messages = [
     {
