@@ -92,5 +92,5 @@ def main():
             limit = 3
         )
 
-    spotify_track = spotify_search_results['tracks']['items'][0]['id']
-    spotify_tracks.append()
+        spotify_track = spotify_search_results['tracks']['items'][0]['id']
+        spotify_tracks.append()
