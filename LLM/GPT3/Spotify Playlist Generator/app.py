@@ -40,6 +40,7 @@ spotify_playlist = sp.user_playlist_create(
 sp.user_playlist_add_tracks(
     spotify_user['id'],
     spotify_playlist['id'],
+    trac
 )
 
 BOT_INFO = """
