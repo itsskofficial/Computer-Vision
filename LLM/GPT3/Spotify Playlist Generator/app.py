@@ -3,7 +3,7 @@ import openai
 import argparse
 from dotenv import *
 
-argparse = argparse.ArgumentParser(description = 'An ')
+argparse = argparse.ArgumentParser(description = 'An AI assistant which')
 load_dotenv('../keys.env')
 
 BOT_INFO = """
