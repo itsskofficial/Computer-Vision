@@ -25,12 +25,7 @@ def get_json_array_from_list(text):
         song = song.split('by')
         print(song)
         #artist = item.split('by')[1].strip()
-        #json_array.append(
-            {
-                'song' : song,
-                'artist' : artist
-            }
-        )
+        #
     return json_array
         
 messages = [
