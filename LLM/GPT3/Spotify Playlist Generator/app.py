@@ -70,6 +70,7 @@ def main():
 
     print('Hi there, I will generate a Spotify playlist for you based on any mood\n')
     prompt = input('Enter the description of the playlist mood you wanna create : ')
+    
     spotify_playlist = sp.user_playlist_create(
         spotify_user,
         public = False,
