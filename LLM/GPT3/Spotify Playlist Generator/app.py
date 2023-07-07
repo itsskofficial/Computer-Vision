@@ -85,7 +85,7 @@ def main():
 
     spotify_user = sp.current_user
     assert spotify_user is not None
-    spotify_tracks = []
+    
 
     print('Hi there, I will generate a Spotify playlist for you based on any mood\n')
     prompt = input('Enter the description of the playlist mood you wanna create : ')
