@@ -4,13 +4,7 @@ import spotipy
 import argparse
 from dotenv import *
 
-spotify_search_results = sp.search(
-    q = item[0]['song'],
-    type = 'track',
-    limit = 3
-)
 
-spotify_track = spotify_search_results['tracks']['items'][0]['id']
 
 spotify_playlist = sp.user_playlist_create(
     spotify_user,
@@ -89,4 +83,3 @@ def main():
 
     songs = get_songs_from_prompt()
     for song in songs:
-        
