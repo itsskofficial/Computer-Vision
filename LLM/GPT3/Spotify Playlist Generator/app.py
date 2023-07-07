@@ -8,6 +8,7 @@ parser.add_argument('--envfile', help = 'A file which contains your OPENAI_API_K
 args = parser.parse_args()
 load_dotenv(args.envfile)
 
+
 BOT_INFO = """
 You are a helpful playlist generating assistant. You should generate a list of songs and their artist according to a text prompt
 """
