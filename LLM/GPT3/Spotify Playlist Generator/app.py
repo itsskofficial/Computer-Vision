@@ -18,6 +18,7 @@ def get_json_from_list(text):
     text = text.split('\n')
     for item in text:
         
+        
 messages = [
     {
         'role' : 'system',
