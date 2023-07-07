@@ -108,4 +108,4 @@ def main():
 
     
     spotify_playlist[]
-    print('Your playlist is created\nCheck it out at https://open.spotify.com/playlist/{}')
+    print(f'Your playlist is created\nCheck it out at https://open.spotify.com/playlist/{spotify_playlist['id]}')
