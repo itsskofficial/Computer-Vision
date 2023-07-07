@@ -37,7 +37,9 @@ sp.user_playlist_create(
     name = prompt
 )
 
-sp.user_playlist_add_tracks
+sp.user_playlist_add_tracks(
+    current_user['id']
+)
 
 BOT_INFO = """
 You are a helpful playlist generating assistant. You should generate a list of songs and their artist according to a text prompt.
