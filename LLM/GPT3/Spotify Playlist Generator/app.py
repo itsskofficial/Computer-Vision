@@ -14,7 +14,7 @@ sp = spotipy.Spotify(
     auth_manager = spotipy.SpotifyOAuth(
         client_id = ,
         client_secret = ,
-        redirect_uri = 'http:/localhost//'
+        redirect_uri = 'http:/localhost:9999'
     )
 )
 BOT_INFO = """
