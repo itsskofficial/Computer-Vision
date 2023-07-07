@@ -102,6 +102,8 @@ def main():
 
     print('Creating a Spotify playlist for you...\n')
 
+    create_spotify_playlist(songs)
+
     
 
     print('Your playlist is created\nCheck it out at {}')
