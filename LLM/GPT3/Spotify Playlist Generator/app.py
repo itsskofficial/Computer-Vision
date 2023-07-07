@@ -29,7 +29,9 @@ search_results = sp.search(
 
 track_id = ['tracks']['items'][0]['id']
 
-sp.user_pla
+sp.user_playlist_create(
+    current_user
+)
 
 BOT_INFO = """
 You are a helpful playlist generating assistant. You should generate a list of songs and their artist according to a text prompt.
