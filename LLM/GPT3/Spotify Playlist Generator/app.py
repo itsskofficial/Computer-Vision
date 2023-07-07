@@ -79,7 +79,7 @@ def main():
             client_id = os.getenv('SPOTIFY_CLIENT_ID'),
             client_secret = os.getenv('SPOTIFY_CLIENT_SECRET'),
             redirect_uri = 'http://localhost:9999',
-            scope = 'playlist-modiy-private'
+            scope = 'playlist-modify-private'
 
         )
     )
