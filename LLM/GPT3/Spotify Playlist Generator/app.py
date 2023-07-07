@@ -30,11 +30,6 @@ def main():
     count = int(input('Enter the number of songs you wanna add in your playlist : '))
     print('Great! Here are the songs that I found for you\n')
 
-    spotify_playlist = sp.user_playlist_create(
-        spotify_user,
-        public = False,
-        name = prompt
-    )
     songs = get_songs_from_prompt(prompt, count)
 
     print('Creating a Spotify playlist for you...\n')
