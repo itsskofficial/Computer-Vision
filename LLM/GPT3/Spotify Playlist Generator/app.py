@@ -29,7 +29,8 @@ def get_json_array_from_list(text):
             }
         )
     return json_array
-        
+
+def get_playlist_
 messages = [
     {
         'role' : 'system',
