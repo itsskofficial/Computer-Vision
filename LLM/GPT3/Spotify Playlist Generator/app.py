@@ -102,7 +102,7 @@ def main():
 
     print('Creating a Spotify playlist for you...\n')
 
-    create_spotify_playlist(sp, songs)
+    create_spotify_playlist(sp, spotify_user, spotu songs)
 
     
 
