@@ -88,7 +88,7 @@ def main():
         spotify_search_results = sp.search(
             q = f'{song_name} {artist_name}',
             type = 'track',
-            limit = 3
+            limit = 1
         )
 
     spotify_track = spotify_search_results['tracks']['items'][0]['id']
