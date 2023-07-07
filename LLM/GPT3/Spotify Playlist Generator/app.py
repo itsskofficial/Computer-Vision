@@ -23,7 +23,8 @@ assert current_user is not None
 
 sp.search(
     q = item[0]['song'],
-    type = 'track'
+    type = 'track',
+    limit = 3
 )
 
 BOT_INFO = """
