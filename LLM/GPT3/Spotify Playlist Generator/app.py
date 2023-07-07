@@ -17,7 +17,7 @@ def get_json_from_list(text):
     dictionary = []
     text = text.split('\n')
     for item in text:
-        song = item.split('.')[]
+        song = item.split('.')[1].remo
 
         
 messages = [
