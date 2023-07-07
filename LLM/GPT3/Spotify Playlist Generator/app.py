@@ -78,7 +78,6 @@ def main():
         public = False,
         name = prompt
     )
-    
     songs = get_songs_from_prompt(prompt, count)
 
     for song in songs:
