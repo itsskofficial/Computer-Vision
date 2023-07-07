@@ -84,10 +84,9 @@ def main():
     songs = get_songs_from_prompt()
     for song in songs:
         spotify_search_results = sp.search(
-            
-        q = item[0]['song'],
-        type = 'track',
-        limit = 3
-    )
+            q = song[0]['song'],
+            type = 'track',
+            limit = 3
+        )
 
     spotify_track = spotify_search_results['tracks']['items'][0]['id']
