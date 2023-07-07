@@ -24,7 +24,7 @@ def get_json_array_from_list(text):
         )
     return json_array
 
-def get_songs_from_prompt(prompt, count = 10):
+def get_songs_from_prompt(prompt = 'happy', count = 10):
 
     messages = [
         {
