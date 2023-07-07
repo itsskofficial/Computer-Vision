@@ -78,7 +78,7 @@ def main():
         auth_manager = spotipy.SpotifyOAuth(
             client_id = os.getenv('SPOTIFY_CLIENT_ID'),
             client_secret = os.getenv('SPOTIFY_CLIENT_SECRET'),
-            redirect_uri = 'http:/localhost:9999',
+            redirect_uri = 'http://localhost:9999',
             scope = 'playlist-modiy-private'
 
         )
