@@ -35,8 +35,8 @@ def get_songs_from_prompt(prompt = 'happy songs', count = 10):
 
     answer = response.to_dict()['choices'][0]['message'].to_dict()['content']
     print(answer)
-    json_array = get_json_array_from_list(answer)
-    return json_array
+    songs = get_json_array_from_list(answer)
+    return songs
 
 def create_spotify_playlist(sp, spotify_user, spotify_playlist, songs):
     spotify_tracks = []
