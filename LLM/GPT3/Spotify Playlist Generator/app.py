@@ -71,7 +71,7 @@ def main():
     parser = argparse.ArgumentParser(description = 'An AI assistant which generates a Spotify playlist from user input text')
     parser.add_argument('--envfile', help = 'A file which contains your OPENAI_API_KEY', default = '../keys.env', type = str)
     args = parser.parse_args()
-    load_dotenv('../keys.env')
+    load_dotenv(args.envfile)
     openai.api_key = os.getenv('OPENAI_API_KEY')
 
     sp = spotipy.Spotify(
