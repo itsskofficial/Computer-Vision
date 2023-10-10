@@ -222,4 +222,6 @@ next-env.d.ts
 .history
 .ionide
 
+data
+
 # End of https://www.toptal.com/developers/gitignore/api/flask,nextjs,visualstudiocode
