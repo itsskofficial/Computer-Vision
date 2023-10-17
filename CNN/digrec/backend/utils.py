@@ -1,6 +1,7 @@
 import urllib
 import numpy as np
 import cv2
+import os
 import tensorflow as tf
 
 def recognize(image):
@@ -11,4 +12,5 @@ def recognize(image):
     img = np.invert(np.array([img]))
     model = tf.keras.models.load_model('model')
     prediction = model.predict(img)
+    os.remove("image.png")
     return prediction

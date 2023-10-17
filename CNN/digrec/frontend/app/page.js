@@ -1,10 +1,11 @@
 "use client"
 
+import Image from "next/image"
 import { useRef, useState } from "react"
-import { SketchField, Tools } from "react-sketch"
+import { ReactSketchCanvas } from "react-sketch-canvas"
 
 const Home = () => {
-  const sketchRef = useRef()
+  const sketchRef = useRef(null)
   const [submit, setSubmit] = useState(false)
   const [error, setError] = useState(null)
   const [prediction, setPrediction] = useState(null)
@@ -49,7 +50,10 @@ const Home = () => {
   }
 
   const handleClear = () => {
-    sketchRef.current.clear()
+    sketchRef.current.clearCanvas()
+    setSubmit(false)
+    setError(null)
+    setPrediction(null)
   }
 
   return (
@@ -64,14 +68,13 @@ const Home = () => {
         Draw a number below
       </h2>
       <div className="bg-white w-[50%]">
-          <SketchField
+        <ReactSketchCanvas
             ref={sketchRef}
             width="100%"
             height="100%"
-            tool={Tools.Pencil}
-            imageFormat="jpg"
-            lineColor="#111"
-            lineWidth={10}
+            canvasColor="white"
+            strokeColor="black"
+            strokeWidth={10}
           />
       </div>
       {error !== null ? (
