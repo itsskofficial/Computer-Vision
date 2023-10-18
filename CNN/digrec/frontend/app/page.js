@@ -16,7 +16,8 @@ const Home = () => {
     setSubmit(true)
 
     try {
-      const image = sketchRef.current.toDataURL()
+      const image = await sketchRef.current.exportImage("png")
+      console.log(image)	
       const response = await fetch("http://localhost:5000/predict", {
         method: "POST",
         headers: {
