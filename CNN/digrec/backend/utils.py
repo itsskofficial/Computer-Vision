@@ -10,7 +10,7 @@ def recognize(dataURL):
         f.write(data)
     img = cv2.imread('image.png')[:,:,0]
     img = np.invert(np.array([img]))
-    model = tf.keras.models.load_model('model')
+    model = tf.keras.models.load_model('model.pb')
     prediction = model.predict(img)
     os.remove("image.png")
     return prediction
