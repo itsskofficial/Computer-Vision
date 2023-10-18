@@ -11,10 +11,13 @@ def home():
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    data = request.json
-    image = data["image"]
-    prediction = recognize(image)
-    return jsonify(prediction = prediction)
+    try:
+        data = request.json
+        image = data["image"]
+        prediction = recognize(image)
+        return jsonify(prediction = prediction)
+    except Exception as e:
+        return e
 
 if __name__ == "__main__":
     app.run(debug = True)

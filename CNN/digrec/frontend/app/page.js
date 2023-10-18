@@ -33,7 +33,7 @@ const Home = () => {
       }
       
       else {
-        throw new Error(response.error.message)
+        throw new Error(response)
       }
     }
 
