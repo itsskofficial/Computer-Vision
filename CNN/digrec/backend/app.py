@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from utils import *
+import tensorflow as tf
+print(tf.__version__)
 
 app = Flask(__name__)
 CORS(app, resource={r"/*" : {"origins" : "*"}})

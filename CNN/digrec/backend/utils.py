@@ -13,7 +13,7 @@ def recognize(dataURL):
     img = np.array([img])
     img = np.invert(img)
     model = tf.keras.models.load_model('model')
-    prediction = tf.argmax(model.predict(img), axis = 1)
-    print(prediction)
+    prediction = tf.argmax(model.predict(img), axis = 1)[0]
+    prediction = prediction.numpy()[0]
     os.remove("image.png")
     return prediction
