@@ -9,8 +9,8 @@ def recognize(dataURL):
     with open('image.png', 'wb') as f:
         f.write(data)
     img = cv2.imread('image.png')[:,:,0]
+    img = cv2.resize(img, (28,28))
     img = np.array([img])
-    img = np.reshape(img, (28, 28))
     img = np.invert(img)
     model = tf.keras.models.load_model('model')
     prediction = tf.argmax(model.predict(img), axis = 1)
