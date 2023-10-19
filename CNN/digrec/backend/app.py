@@ -17,9 +17,9 @@ def predict():
         data = request.json
         image = data["image"]
         prediction = recognize(image)
-        return jsonify(prediction = prediction)
+        return jsonify(prediction = prediction), 200
     except Exception as e:
-        return jsonify(error = str(e))
+        return jsonify(error = str(e)), 400
 
 if __name__ == "__main__":
     app.run(debug = True)
