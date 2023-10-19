@@ -33,7 +33,8 @@ const Home = () => {
       }
       
       else {
-        throw new Error(response)
+        const data =  await response.json()
+        throw new Error(data["error"])
       }
     }
 
