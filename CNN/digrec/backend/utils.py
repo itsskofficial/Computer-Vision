@@ -15,5 +15,6 @@ def recognize(dataURL):
     model = tf.keras.models.load_model('model')
     prediction = tf.argmax(model.predict(img), axis = 1)[0]
     prediction = prediction.numpy()
+    prediction = prediction.item()
     os.remove("image.png")
     return prediction
