@@ -17,7 +17,6 @@ const Home = () => {
 
     try {
       const image = await sketchRef.current.exportImage("png")
-      console.log(image)	
       const response = await fetch("https://digrec.onrender.com/predict", {
         method: "POST",
         headers: {
@@ -27,18 +26,14 @@ const Home = () => {
         body: JSON.stringify({image : image})
       })
 
-      console.log("hi")
-
       if (response.ok) {
         const data = await response.json()
-        console.log(data)
         setPrediction(data["prediction"])
       }
       
       
       else {
         const data = await response.json()
-        console.log(data)
         throw new Error(data["error"])
       }
     }
@@ -74,7 +69,7 @@ const Home = () => {
       <h2 className="font-Poppins font-semibold text-center lg:text-lg sm:text-base xs:text-sm text-white">
         Draw a number below
       </h2>
-      <div className="bg-white w-[50%]">
+      <div className="bg-white w-[50%] lg:h-[300px] sm:h-[250px] xs:h-[200px]">
         <ReactSketchCanvas
             ref={sketchRef}
             width="100%"
