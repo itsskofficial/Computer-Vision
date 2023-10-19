@@ -27,13 +27,18 @@ const Home = () => {
         body: JSON.stringify({image : image})
       })
 
+      console.log("hi")
+
       if (response.ok) {
         const data = await response.json()
+        console.log(data)
         setPrediction(data["prediction"])
       }
       
+      
       else {
-        const data =  await response.json()
+        const data = await response.json()
+        console.log(data)
         throw new Error(data["error"])
       }
     }
