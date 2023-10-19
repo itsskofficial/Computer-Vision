@@ -85,14 +85,14 @@ const Home = () => {
         </h3> 
       ) : prediction !== null ? (
         <h3 className="font-Quicksand font-medium lg:text-[25px] sm:text-[20px] xs:text-[15px] sm:text-base xs:text-sm text-white">
-            This number is <span className="text-[#ff0000]">{prediction}</span> 
+            This number is <span className="text-[#4facfe]">{prediction}</span> 
         </h3>
         ) : (
             <div className="flex items-center justify-center lg:gap-[100px] sm:gap-[50px] xs:gap-[25px]">
-              <button type="submit" onClick={handleSubmit} className="bg-gradient-to-b from-pink-500 via-red-500 to-yellow-500 lg:px-[40px] sm:px-[30px] xs:px-[20px] lg:py-[20px] sm:py-[15px] xs:py-[10px] rounded-[12px] font-Quicksand font-semibold lg:text-[25px] sm:text-[20px] xs:text-[15px] text-white">
+              <button type="submit" onClick={handleSubmit} className="bg-gradient-to-b from-[#4facfe] to-[#00f2fe] lg:px-[40px] sm:px-[30px] xs:px-[20px] lg:py-[20px] sm:py-[15px] xs:py-[10px] rounded-[12px] font-Quicksand font-semibold lg:text-[25px] sm:text-[20px] xs:text-[15px] text-white">
                 {submit ? "Guessing..." : "Guess The Number"}
               </button>
-              <button type="submit" onClick={handleClear} className="bg-gradient-to-b from-pink-500 via-red-500 to-yellow-500 lg:px-[40px] sm:px-[30px] xs:px-[20px] lg:py-[20px] sm:py-[15px] xs:py-[10px] rounded-[12px] font-Quicksand font-semibold lg:text-[25px] sm:text-[20px] xs:text-[15px] text-white">
+              <button type="submit" onClick={handleClear} className="bg-gradient-to-b from-[#4facfe] to-[#00f2fe] lg:px-[40px] sm:px-[30px] xs:px-[20px] lg:py-[20px] sm:py-[15px] xs:py-[10px] rounded-[12px] font-Quicksand font-semibold lg:text-[25px] sm:text-[20px] xs:text-[15px] text-white">
                 Clear
               </button>
             </div>

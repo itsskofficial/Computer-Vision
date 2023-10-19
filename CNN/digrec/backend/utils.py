@@ -12,5 +12,6 @@ def recognize(dataURL):
     img = np.invert(np.array([img]))
     model = tf.saved_model.load('model.pb')
     prediction = tf.argmax(model.predict(img), axis = 1)
+    print(prediction)
     os.remove("image.png")
     return prediction
