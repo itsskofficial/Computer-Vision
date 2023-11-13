@@ -20,7 +20,7 @@ def app() :
     st.image(img, width = 200)
     caption = generate_caption("image.jpg", img_model, model, tokenizer, 31)
     st.text("The generated caption is")
-    st.text(caption)
+    st.caption(caption)
 
     if st.button("Upload another image") :
         os.remove("image.jpg")
