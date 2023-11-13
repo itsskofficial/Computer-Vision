@@ -8,16 +8,18 @@ from tensorflow.keras.applications.vgg16 import VGG16
 
 img_model = VGG16()
 img_model = Model(inputs = img_model.inputs, outputs = img_model.layers[-2].output)
+model = load_model("model")
+
+with open("tokenizer.pkl", "rb") as file: 
+    tokenizer = pickle.load(file) 
 
 def app() :
-    model = load_model("model")
-
-    with open("tokenizer.pkl", "rb") as file: 
-        tokenizer = pickle.load(file) 
-    
+    st.title("ImgCap")
+    st.text("Your uploaded image is")
     img = Image.open("image.jpg")
     st.image(img, width = 200)
     caption = generate_caption("image.jpg", img_model, model, tokenizer, 31)
+    st.text("The generated caption is")
     st.text(caption)
 
     if st.button("Upload another image") :
