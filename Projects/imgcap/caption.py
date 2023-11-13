@@ -8,9 +8,9 @@ from tensorflow.keras.applications.vgg16 import VGG16
 
 img_model = VGG16()
 img_model = Model(inputs = img_model.inputs, outputs = img_model.layers[-2].output)
-model = load_model("model")
+model = load_model("Projects/imgcap/model")
 
-with open("tokenizer.pkl", "rb") as file: 
+with open("Projects/imgcap/tokenizer.pkl", "rb") as file: 
     tokenizer = pickle.load(file) 
 
 def app() :
