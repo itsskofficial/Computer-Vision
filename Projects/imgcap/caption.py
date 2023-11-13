@@ -16,11 +16,13 @@ with open("Projects/imgcap/tokenizer.pkl", "rb") as file:
 def app() :
     st.title(":camera_with_flash::hash: ImgCap")
     st.text("Your uploaded image is")
-    img = Image.open("image.jpg")
-    st.image(img, width = 200)
-    caption = generate_caption("image.jpg", img_model, model, tokenizer, 31)
-    st.text("The generated caption is")
-    st.caption(caption)
+
+    if os.path.exists("Projects/imgcap/image.jpg") :
+        img = Image.open("image.jpg")
+        st.image(img, width = 200)
+        caption = generate_caption("image.jpg", img_model, model, tokenizer, 31)
+        st.text("The generated caption is")
+        st.caption(caption)
 
     if st.button("Upload another image") :
         os.remove("image.jpg")
