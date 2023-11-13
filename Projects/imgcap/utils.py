@@ -1,6 +1,6 @@
 import numpy as np
-from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.applications.vgg16 import preprocess_input
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 
 def index_to_word(y, tokenizer) :
