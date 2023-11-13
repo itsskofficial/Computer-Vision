@@ -14,7 +14,7 @@ with open("Projects/imgcap/tokenizer.pkl", "rb") as file:
     tokenizer = pickle.load(file) 
 
 def app() :
-    st.title("ImgCap")
+    st.title(":camera_with_flash::hash: ImgCap")
     st.text("Your uploaded image is")
     img = Image.open("image.jpg")
     st.image(img, width = 200)
