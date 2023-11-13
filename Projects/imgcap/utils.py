@@ -9,6 +9,17 @@ def index_to_word(y, tokenizer) :
       return word
   return None
 
+def remove_duplicates(input_str):
+    unique_chars = set()
+    result_str = ""
+    
+    for char in input_str:
+        if char not in unique_chars:
+            result_str += char
+            unique_chars.add(char)
+    
+    return result_str
+
 def predict_caption(model, image, tokenizer, max_length) :
   in_text = "start"
   for i in range(max_length) :
@@ -28,6 +39,7 @@ def predict_caption(model, image, tokenizer, max_length) :
     
     in_text = in_text.replace("start ", "")
     in_text = in_text.replace(" end", "")
+    in_text = remove_duplicates(in_text)
 
   return in_text
 
