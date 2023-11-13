@@ -1,6 +1,4 @@
-os
 numpy
 pillow
-pickle
 streamlit
 tensorflow
