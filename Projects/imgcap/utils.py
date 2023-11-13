@@ -26,11 +26,8 @@ def predict_caption(model, image, tokenizer, max_length) :
     if word == "end" :
       break
     
-    if "start" in in_text :
-      in_text = in_text.split("start ")[1]
-    
-    if "end" in in_text :
-      in_text = in_text.split(" end")[0]
+    in_text = in_text.replace("start ", "")
+    in_text = in_text.replace(" end", "")
 
   return in_text
 
