@@ -25,8 +25,14 @@ def predict_caption(model, image, tokenizer, max_length) :
 
     if word == "end" :
       break
+    
+    if "start" in in_text :
+      in_text = in_text.split("start ")[1]
+    
+    if "end" in in_text :
+      in_text = in_text.split(" end")[0]
 
-  return in_text.split("start ")[1]
+  return in_text
 
 def generate_caption(img_path, img_model, model, tokenizer, max_length) :
   img = load_img(img_path, target_size = (224, 224))

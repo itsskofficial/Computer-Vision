@@ -2,7 +2,7 @@ import caption
 import streamlit as st
 
 def app():
-    st.title("ImgCap")
+    st.title(":camera_with_flash: :hash: ImgCap")
     st.text("Upload any image below to generate a custom caption")
     image = st.file_uploader(label = "Let the magic happen", type = ["jpg"])
 
