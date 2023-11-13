@@ -9,6 +9,7 @@ def app():
     if image :
         with open("image.jpg", "wb") as file :
             file.write(image.getbuffer())
+            st.write("File uploaded")
 
     if st.button("Submit") :
         st.session_state.runpage = caption.app
