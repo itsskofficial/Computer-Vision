@@ -23,5 +23,5 @@ def app() :
     st.caption(caption)
 
     if st.button("Upload another image") :
-        os.remove("image.jpg")
+        os.remove("Projects/imgcap/image.jpg")
         st.rerun()
