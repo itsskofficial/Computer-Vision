@@ -24,8 +24,4 @@ def app() :
 
     if st.button("Upload another image") :
         os.remove("image.jpg")
-
-        for key in st.session_state.keys() :
-            del st.session_state[key]  
-
         st.rerun()
