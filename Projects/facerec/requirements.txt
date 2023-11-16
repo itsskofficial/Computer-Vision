@@ -1,0 +1,4 @@
+uuid
+numpy
+streamlit
+tensorflow
