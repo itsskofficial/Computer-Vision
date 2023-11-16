@@ -43,7 +43,7 @@ def app() :
                     os.rmdir(os.path.join(root, name))
         
         for key in st.session_state.keys():
-                if key == "runpage" :
+                if key == "runpage" or key == "image_count" :
                     del st.session_state[key]  
         
         st.rerun()
