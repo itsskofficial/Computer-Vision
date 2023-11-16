@@ -11,6 +11,7 @@ def verify(model, detection_threshold, verification_threshold) :
     validation_img = preprocess(os.path.join(st.session_state.validation_path, image))
     result = model.predict(list(np.expand_dims([input_img, validation_img], axis = 1)))
     results.append(result)
+    print(results)
 
   detection = np.sum(np.array(results) > detection_threshold)
   verification = detection / len(os.listdir(os.path.join(st.session_state.validation_path)))

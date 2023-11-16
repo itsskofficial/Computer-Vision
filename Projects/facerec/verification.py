@@ -23,7 +23,7 @@ def app() :
     if image :
         with open(f"{st.session_state.input_path}/image.jpg", "wb") as file :
             file.write(image.getbuffer())
-            verified = verify(model, 0.5, 0.7)
+            verified = verify(model, 0.7, 0.9)
             if verified == True :
                 st.write("You are verified")
             else :
