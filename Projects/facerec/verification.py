@@ -18,7 +18,7 @@ model = load_model("Projects/facerec/model", custom_objects = {"L1Dist" : L1Dist
 def app() :
     st.title(":camera_with_flash::hash: FaceRec")
     st.text("Now let's capture the main image to verify whether its you or not")
-    image = st.camera_input(label = "Take at least 15 pictures for good results", help = "Pose differently for each image")
+    image = st.camera_input(label = "Take one good picture", help = "Make sure you are not wearing any specs or hats", key = "verification_cam")
 
     if image :
         with open(f"{st.session_state.input_path}/image.jpg", "wb") as file :

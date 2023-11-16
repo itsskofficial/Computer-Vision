@@ -4,7 +4,8 @@ import verification
 import streamlit as st
 import tensorflow as tf
 
-os.mkdir("Projects/facerec/data")
+if os.path.exists("Projects/facerec/data") ==  False:
+    os.mkdir("Projects/facerec/data")
 
 if "validation_path" not in st.session_state :
     st.session_state.validation_path = "Projects/facerec/data/validation"
@@ -22,7 +23,7 @@ def app():
 
     while count < 15 :
 
-        image = st.camera_input(label = "Take at least 15 pictures for good results", help = "Pose differently for each image")
+        image = st.camera_input(label = "Take at least 15 pictures for good results", help = "Pose differently for each image", key = "validation_cam")
 
         if image :
             with open(f"{st.session_state.validation_path}/{uuid.uuid1()}.jpg", "wb") as file :
