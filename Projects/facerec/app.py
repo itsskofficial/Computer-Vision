@@ -24,21 +24,20 @@ def app():
     st.text("First let's capture some images. Be sure to remove any specs or hats")
     count = 0
 
-    while count < 15 :
+    image = st.camera_input(label = "Take at least 15 pictures for good results", help = "Pose differently for each image", key = "validation_cam")
 
-        image = st.camera_input(label = "Take at least 15 pictures for good results", help = "Pose differently for each image", key = "validation_cam")
+    if image :
+        with open(f"{st.session_state.validation_path}/{uuid.uuid1()}.jpg", "wb") as file :
+            file.write(image.getbuffer())
+            st.write(f"Pictures taken : {count}")
+            count += 1
 
-        if image :
-            with open(f"{st.session_state.validation_path}/{uuid.uuid1()}.jpg", "wb") as file :
-                file.write(image.getbuffer())
-                st.write(f"Pictures taken : {count}")
-                count += 1
+    if count >= 15 :
+        st.write("Okay, we can proceed now")
 
-    st.write("Okay, we can proceed now")
-
-    if st.button("Proceed") :
-        st.session_state.runpage = verification.app
-        st.rerun()
+        if st.button("Proceed") :
+            st.session_state.runpage = verification.app
+            st.rerun()
 
 if __name__ == "__main__":
     if "runpage" not in st.session_state:
