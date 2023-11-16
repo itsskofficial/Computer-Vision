@@ -20,7 +20,7 @@ if os.path.exists("Projects/facerec/data") ==  False:
     os.mkdir(st.session_state.input_path)
 
 def app():
-    st.title(":camera_with_flash::hash: FaceRec")
+    st.title(":neutral_face::face_with_raised_eyebrow: FaceRec")
     st.text("First let's capture some images. Be sure to remove any specs or hats")
     count = 0
 
