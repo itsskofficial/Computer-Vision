@@ -13,7 +13,7 @@ class L1Dist(Layer) :
   def call(self, input_embedding, validation_embedding) :
     return tf.math.abs(input_embedding -  validation_embedding)
 
-model = load_model("model", custom_objects = {"L1Dist" : L1Dist, "BinaryCrossentropy" : BinaryCrossentropy})
+model = load_model("Projects/facerec/model", custom_objects = {"L1Dist" : L1Dist, "BinaryCrossentropy" : BinaryCrossentropy})
 
 def app() :
     st.title(":camera_with_flash::hash: FaceRec")
@@ -30,7 +30,13 @@ def app() :
                 st.write("Sorry, its not you")
 
     if st.button("Do it again") :
-        for root, dirs, files in os.walk(f"Projects/facerec/data", topdown = False):
+        for root, dirs, files in os.walk(st.session_state.validation_path, topdown = False):
+                for name in files:
+                    os.remove(os.path.join(root, name))
+                for name in dirs:
+                    os.rmdir(os.path.join(root, name))
+
+        for root, dirs, files in os.walk(st.session_state.input_path, topdown = False):
                 for name in files:
                     os.remove(os.path.join(root, name))
                 for name in dirs:
