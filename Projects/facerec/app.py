@@ -13,10 +13,10 @@ if "validation_path" not in st.session_state :
 if "input_path" not in st.session_state :
     st.session_state.input_path = "Projects/facerec/data/input"
 
-if os.path.exists("Projects/facerec/data") ==  False:
+if os.path.exists("Projects/facerec/data/validation") ==  False:
     os.mkdir(st.session_state.validation_path)
 
-if os.path.exists("Projects/facerec/data") ==  False:
+if os.path.exists("Projects/facerec/data/input") ==  False:
     os.mkdir(st.session_state.input_path)
 
 def app():
