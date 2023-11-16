@@ -29,8 +29,9 @@ def app():
     if image :
         with open(f"{st.session_state.validation_path}/{uuid.uuid1()}.jpg", "wb") as file :
             file.write(image.getbuffer())
-            st.write(f"Pictures taken : {count}")
             count += 1
+            st.write(f"Pictures taken : {count}")
+            
 
     if count >= 15 :
         st.write("Okay, we can proceed now")
