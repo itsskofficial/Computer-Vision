@@ -29,7 +29,6 @@ async def training():
 @app.post("/predict")
 async def predict_route(text):
     try:
-
         obj = PredictionPipeline()
         text = obj.predict(text)
         return text
