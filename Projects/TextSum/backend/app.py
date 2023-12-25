@@ -1,6 +1,5 @@
 from fastapi import FastAPI, Response
 from starlette.status import HTTP_500_INTERNAL_SERVER_ERROR, HTTP_200_OK
-import uvicorn
 from fastapi.responses import Response
 from TextSum.pipeline.prediction import PredictionPipeline
 from fastapi.middleware.cors import CORSMiddleware
@@ -33,4 +32,4 @@ async def summarize(text: str, response: Response):
         return {"error": e}
 
 if __name__=="__main__":
-    uvicorn.run(app, port=8080)
+    app.run(debug = True)
