@@ -11,8 +11,6 @@ AUTHOR_USER_NAME = "itsskofficial"
 SRC_REPO = "TextSum"
 AUTHOR_EMAIL = "itsskofficial03@gmail.com"
 
-
-
 setuptools.setup(
     name=SRC_REPO,
     version=__version__,

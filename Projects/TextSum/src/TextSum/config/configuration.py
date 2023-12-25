@@ -1,6 +1,6 @@
 from TextSum.constants import *
 from TextSum.utils.common import read_yaml, create_directories
-from TextSum.entity import DataIngestionConfig
+from TextSum.entity import DataIngestionConfig, DataValidationConfig
 
 class ConfigurationManager:
     def __init__(
@@ -24,3 +24,14 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+    
+    def get_data_validation_config(self) -> DataValidationConfig:
+            config = self.config.data_validation
+            create_directories([config.root_dir])
+            data_validation_config = DataValidationConfig(
+                root_dir = config.root_dir,
+                status_file = config.status_file,
+                all_required_files = config.all_required_files
+            )
+
+            return data_validation_config
