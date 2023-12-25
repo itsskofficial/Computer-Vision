@@ -1,5 +1,5 @@
 from TextSum.config.configuration import ConfigurationManager
-from TextSum.components.data_ingestion import DataValidation
+from TextSum.components.data_validation import DataValidation
 from TextSum.logging import logger
 
 class DataValidationTrainingPipeline:
