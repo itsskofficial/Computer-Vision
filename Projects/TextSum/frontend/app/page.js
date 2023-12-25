@@ -20,7 +20,7 @@ const Home = () => {
     setSubmit(true)
 
     try {
-      const response = await fetch("https://textsum.onrender.com/summarize", {
+      const response = await fetch("https://textsum-0df7.onrender.com/summarize", {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
