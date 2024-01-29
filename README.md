@@ -1,2 +1,2 @@
-# Deep Learning
-A collection of deep learning projects, programs and papers
+# Computer Vision
+A collection of computer vision projects, programs and papers
