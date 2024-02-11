@@ -1,0 +1,7 @@
+gspread
+firebase_admin
+streamlit
+twilio
+sounddevice
+soundfile
+gtts

@@ -1,0 +1,8 @@
+fastapi 
+uvicorn 
+pyngrok 
+nest_asyncio 
+kaleido 
+pydantic 
+sse-starlette
+tensorflow
