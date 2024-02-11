@@ -35,6 +35,8 @@
 
 ## About The Project
 
+![Screen Shot](attendance-system.png)
+
 The Attendance System is a project utilizing face recognition with Siamese networks. It features a FastAPI backend for model serving and a Streamlit frontend for user interaction. The system enables efficient attendance tracking through facial recognition.The project was deployed on Jetson Nano device which was independently configured. The instructor can login with their credentials and setup the device so that each student can verify. During verification the request is sent to the server running on the Jetson Nano and it returns the roll no and name of the verified student. The application confirms the verification by text to speech greeting for the student and also by sending a SMS to the instructor. The attendance is automatically marked on the instructor's Google Sheet
 
 ## Built With
