@@ -3,6 +3,7 @@ import cv2
 import json
 import base64
 import requests
+from utils import *
 from gtts import gTTS
 import soundfile as sf
 import streamlit as st
@@ -10,6 +11,7 @@ import sounddevice as sd
 from datetime import datetime
 from twilio.rest import Client
 from dotenv import load_dotenv
+from unittest.mock import Mock
 
 load_dotenv("secrets.env")
 client = Client(os.environ["TWILIO_SID"], os.environ["TWILIO_TOKEN"])
@@ -32,63 +34,70 @@ def app():
                 del st.session_state[key]   
             st.rerun()
     
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
     frame_placeholder = st.empty()
 
     capture_button = st.button("Capture") 
 
     while not capture_button:
         ret, frame = cap.read()
-        st.session_state["image"] = frame[120:120 + 450, 200: 200 + 350:]
+        st.session_state["image"] = frame
         frame_placeholder.image(st.session_state["image"], channels = "BGR")
 
     frame_placeholder.image(st.session_state["image"], channels = "BGR")
 
-    cv2.imwrite(st.session_state["verification_path"], st.session_state["image"])
+    cv2.imwrite(st.session_state["input_image_path"], st.session_state["image"])
 
     cap.release()
     cv2.destroyAllWindows() 
 
-    try:        
-        with open(st.session_state["verification_path"], "rb") as image_file:
-            encoded_image = base64.b64encode(image_file.read()).decode("utf-8")
-        
-        data = {"image": encoded_image}
-        headers = {"Content-Type": "application/json"}
-        json_data = json.dumps(data)
-        # dummy_json_response = Mock()
-        # dummy_json_response.status_code = 200
-        # dummy_json_response.json.return_value = {"rollno": "8001", "name": "Sarthak Karandikar"}
-        
-        # response = dummy_json_response
-        response = requests.post(st.session_state["verification_url"], data = json_data, headers = headers)
+    try:
+        verified_students = 0
+        detect_faces(st.session_state["input_image_path"])
 
-        if response.status_code == 200:
-            response_dict = response.json()  
-            timestamp = datetime.now()
-            time = timestamp.strftime("%I:%M %p")
-            worksheet = st.session_state["worksheet"]
-            worksheet.append_row([response_dict["rollno"], response_dict["name"], time])
-            st.success(f"Hello { response_dict['name']}, your attendance has been recorded")
-            greeting_text = f"Hello, {response_dict['name']}!"
-            text_to_speech(greeting_text)
-            play_audio("greeting.mp3")
-
-            client.messages.create(
-            to = os.environ[f"{st.session_state['subject']}_NO"],
-            from_ = os.environ["TWILIO_NO"],
-            body = f"Attendance Marked\nRollNo: {response_dict['rollno']}\nName: {response_dict['name']}"
-        )
+        for face in os.listdir("detected_faces"):
+            with open(os.path.join("detected_faces", face), "rb") as image_file:
+                encoded_image = base64.b64encode(image_file.read()).decode("utf-8")
             
-        else:
-            response_dict = response.json()
-            raise Exception(response_dict["detail"])
-    
+            data = {"image": encoded_image}
+            headers = {"Content-Type": "application/json"}
+            json_data = json.dumps(data)
+            # dummy_json_response = Mock()
+            # dummy_json_response.status_code = 200
+            # dummy_json_response.json.return_value = {"rollno": "8001", "name": "Sarthak Karandikar"}
+            
+            # response = dummy_json_response
+            response = requests.post(st.session_state["verification_url"], data = json_data, headers = headers)
+
+            if response.status_code == 200:
+                response_dict = response.json()  
+                timestamp = datetime.now()
+                time = timestamp.strftime("%I:%M %p")
+                worksheet = st.session_state["worksheet"]
+                worksheet.append_row([response_dict["rollno"], response_dict["name"], time])
+                verified_students += 1
+            else:
+                response_dict = response.json()
+                raise Exception(response_dict["detail"])
+
+        client.messages.create(
+        to = os.environ[f"{st.session_state['subject']}_NO"],
+        from_ = os.environ["TWILIO_NO"],
+        body = f"Attendance marked of {verified_students} students"
+    )
+            
+        for face in os.listdir("detected_faces"):
+            os.remove(os.path.join("detected_faces", face))
+
     except Exception as e:
         if e == "'NoneType' object is not subscriptable":
             st.error("No person verified")
+            for face in os.listdir("detected_faces"):
+                os.remove(os.path.join("detected_faces", face))
         else:
             st.error(e)
+            for face in os.listdir("detected_faces"):
+                os.remove(os.path.join("detected_faces", face))
     
     finally:
         st.rerun()

@@ -4,14 +4,19 @@ import requests
 import attendance
 import firebase_admin
 import streamlit as st
+import attendance
 from datetime import datetime
 from dotenv import load_dotenv
+from unittest.mock import Mock
 from firebase_admin import credentials, auth
 
 load_dotenv("secrets.env")
 
-if "verification_path" not in st.session_state:
-    st.session_state["verification_path"] = "./input_image.jpg"
+if "input_image_path" not in st.session_state:
+    st.session_state["input_image_path"] = "./input_image.jpg"
+
+if "modified_image_path" not in st.session_state:
+    st.session_state["modified_image_path"] = "./modified_image.jpg"
 
 if "initiation_url" not in st.session_state:
     st.session_state["initiation_url"]= "https://helpful-boxer-wrongly.ngrok-free.app/initiate"
@@ -107,7 +112,10 @@ def app():
                 worksheet.format("A1:C1", {"textFormat": {"bold": True}})
 
             st.session_state["worksheet"] = worksheet
-            
+
+            # dummy_json_response = Mock()
+            # dummy_json_response.status_code = 200
+            # response = dummy_json_response
             response = requests.post(st.session_state["initiation_url"])
 
             if response.status_code == 200:
